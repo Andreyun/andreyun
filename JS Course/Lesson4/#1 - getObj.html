@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF8" />
+	<title>JS Course Lesson 4 Basic JS</title>
+	<meta name="description" content="JS Course from CodeAngels"/>
+	<meta name="keywords" content="js, course, education, semantic page"/>
+</head>
+<body>
+	<script type="text/javascript">
+		obj1 = {one:100,two:200,three:'three',object:{new:'subProp',subObject:{sub:'subObject prop'}}};
+
+		function getObject(path,obj) {
+		  var paths = path.split('.');
+		  var path = paths.shift();
+		  if (paths.length) {
+		    if (typeof(obj[path]) == 'object')return getObject(paths.join('.'),obj[path]); else return undefined;
+		  } else return obj[path];
+		}
+
+		console.log(getObject('object.subObject',obj1));
+
+	</script>
+	<h1>Hello!</h1>
+	<p>Press Shift+Ctrl+I and select Console tab :)<p>
+</body>
+</html>

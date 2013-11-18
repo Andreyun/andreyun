@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF8" />
+	<title>JS Course Lesson 4 Basic JS</title>
+	<meta name="description" content="JS Course from CodeAngels"/>
+	<meta name="keywords" content="js, course, education, semantic page"/>
+</head>
+<body>
+	<script type="text/javascript">
+		obj1 = {one:100,two:200,three:'three',object:{new:'object'}};
+
+		function deepCopy(objSource){
+		  var objCopy = new Object();
+		  for(var key in objSource){
+		    if (typeof(objSource[key]) == 'object') {
+		      objCopy[key] = deepCopy(objSource[key]);
+		    } else objCopy[key] = objSource[key];
+		  }
+		  return objCopy;
+		}
+
+		obj2 = deepCopy(obj1);
+		obj1.object.test = 'new prop';
+
+		console.log(obj1);
+		console.log(obj2);
+
+	</script>
+	<h1>Hello!</h1>
+	<p>Press Shift+Ctrl+I and select Console tab :)<p>
+</body>
+</html>

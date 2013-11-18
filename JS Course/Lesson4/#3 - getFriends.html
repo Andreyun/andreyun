@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF8" />
+	<title>JS Course Lesson 4 Basic JS</title>
+	<meta name="description" content="JS Course from CodeAngels"/>
+	<meta name="keywords" content="js, course, education, semantic page"/>
+</head>
+<body>
+	<script type="text/javascript">
+		var people = [
+			{id: 1, name: 'Brad', friends: [2,5,6]},
+			{id: 2, name: 'John', friends: [1, 3]},
+			{id: 3, name: 'Tom', friends: [2, 5]},
+			{id: 4, name: 'Fil', friends: null},
+			{id: 5, name: 'John', friends: [1, 3]},
+			{id: 6, name: 'Jim', friends: [1]}
+		];
+		 
+		var getFriends = function(userId) {
+		  var friends = new Array();
+		  for(key in people) {
+		    if(people[key].id == userId) friendList = people[key].friends;
+		  }
+		  
+		  if (typeof friendList !== 'undefined') {
+		    if (friendList != null) {
+		      for(key in people) if(friendList.indexOf(people[key].id) >= 0)  friends.push(people[key]);
+		    }
+		  } else return null;
+		  
+		  return friends;
+		};
+
+		console.log(getFriends(2));
+
+	</script>
+	<h1>Hello!</h1>
+	<p>Press Shift+Ctrl+I and select Console tab :)<p>
+</body>
+</html>
