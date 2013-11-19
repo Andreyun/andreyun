@@ -17,22 +17,23 @@
 			{id: 6, name: 'Jim', friends: [1]}
 		];
 		 
-		var getFriends = function(userId) {
-		  var friends = new Array();
-		  for(key in people) {
-		    if(people[key].id == userId) friendList = people[key].friends;
+		var getFriends = function(userId,people) {
+		  var friends = [], friendList;
+		  for (var key in people) {
+		    if (people[key].id == userId) friendList = people[key].friends;
 		  }
-		  
-		  if (typeof friendList !== 'undefined') {
-		    if (friendList != null) {
-		      for(key in people) if(friendList.indexOf(people[key].id) >= 0)  friends.push(people[key]);
-		    }
-		  } else return null;
-		  
-		  return friends;
-		};
 
-		console.log(getFriends(2));
+		  if (typeof friendList !== 'undefined') {
+		    if (friendList !== null) {
+		      for (key in people)
+		        if (friendList.indexOf(people[key].id) >= 0) friends.push(people[key]);
+		    }
+		  } else return null 
+
+		  return friends;
+		}
+
+		console.log(getFriends(100500,people));
 
 	</script>
 	<h1>Hello!</h1>
